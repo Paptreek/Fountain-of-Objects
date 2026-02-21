@@ -2,21 +2,26 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    private GameObject _player;
     private Vector2 _playerStartingPosition = new Vector2(0, 0);
+
     public GameObject RoomPrefab;
     public GameObject PlayerPrefab;
     public GameObject RoomsManager;
+    public Camera Camera;
     public Room[,] Rooms;
     public int RoomsHeight;
     public int RoomsWidth;
     public float Spacing;
 
+
     void Start()
     {
+        _player = Instantiate(PlayerPrefab, _playerStartingPosition, Quaternion.identity);
+        Camera.SetFocus(_player);
         Debug.Log("Board is building");
         Rooms = new Room[RoomsHeight, RoomsWidth];
         BuildRooms();
-        PlayerPrefab = Instantiate(PlayerPrefab, _playerStartingPosition, Quaternion.identity);
     }
     public void BuildRooms()
     {
