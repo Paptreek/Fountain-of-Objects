@@ -1,11 +1,10 @@
-using System;
 using UnityEngine;
 using Assets.Scripts;
 
 public class Player : MonoBehaviour
 { 
     public Location Location { get; private set; }
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    
     void Start()
     {
         Debug.Log("Debug Log: Player has joined the game.");
@@ -18,5 +17,5 @@ public class Player : MonoBehaviour
         
     }
 
-    public void Move(float x, float y) => Location = new Location(x, y);
+    public void SetLocation(Location location) => Location = location;
 }
