@@ -164,13 +164,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eef51fad570ca7f42987e2d882ba67b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MapManager
-  RoomPrefab: {fileID: 8062824193503256780, guid: a75611f7c5c96314f839babded39c9b2, type: 3}
-  PlayerPrefab: {fileID: 8503268487075455793, guid: 0cf0790f0b37171458164b8ec111b48b, type: 3}
-  RoomsManager: {fileID: 1401216272}
-  Camera: {fileID: 2023753132}
-  RoomsHeight: 5
-  RoomsWidth: 5
-  Spacing: 1.1
+  _roomPrefab: {fileID: 8062824193503256780, guid: a75611f7c5c96314f839babded39c9b2, type: 3}
+  _playerPrefab: {fileID: 8503268487075455793, guid: 0cf0790f0b37171458164b8ec111b48b, type: 3}
+  _roomsManager: {fileID: 1401216272}
+  _camera: {fileID: 2023753132}
+  _roomsHeight: 5
+  _roomsWidth: 5
+  _spacing: 1.1
 --- !u!1 &953678877
 GameObject:
   m_ObjectHideFlags: 0

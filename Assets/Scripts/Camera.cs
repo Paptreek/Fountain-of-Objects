@@ -6,12 +6,12 @@ public class Camera : MonoBehaviour
     private Vector3 _offsetAmount = new(0, 0, -10);
     void Update()
     {
-        transform.position = _focusTarget.transform.position;
+        transform.position = _focusTarget.transform.position + _offsetAmount;
     }
 
     public void SetFocus(GameObject focusTarget)
     {
         _focusTarget = focusTarget;
-        transform.position = focusTarget.transform.position - _offsetAmount;
+        transform.position = focusTarget.transform.position + _offsetAmount;
     }
 }
