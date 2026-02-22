@@ -1,0 +1,22 @@
+using System;
+using UnityEngine;
+using Assets.Scripts;
+
+public class Player : MonoBehaviour
+{ 
+    public Location Location { get; private set; }
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    void Start()
+    {
+        Debug.Log("Debug Log: Player has joined the game.");
+        Debug.Log($"The player's starting location is ({Location.X}, {Location.Y})");
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+
+    public void Move(float x, float y) => Location = new Location(x, y);
+}
