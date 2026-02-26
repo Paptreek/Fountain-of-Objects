@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8275141906061245551}
   - component: {fileID: 1741092527183441956}
-  - component: {fileID: 2186023213921640320}
+  - component: {fileID: 6467336371741850494}
   m_Layer: 0
   m_Name: Room
   m_TagString: Untagged
@@ -92,7 +92,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
---- !u!114 &2186023213921640320
+--- !u!114 &6467336371741850494
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -101,6 +101,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 8062824193503256780}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ef68dba2b0d4c84bb190abd676947ff, type: 3}
+  m_Script: {fileID: 11500000, guid: f25ae298fd1e30c4bb4492ba618eb56e, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Square
+  m_EditorClassIdentifier: Assembly-CSharp::RoomView

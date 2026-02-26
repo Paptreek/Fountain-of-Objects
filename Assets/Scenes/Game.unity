@@ -149,7 +149,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1401216273}
+  - {fileID: 1391295876}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &433227004
@@ -164,14 +164,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eef51fad570ca7f42987e2d882ba67b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MapManager
-  _roomPrefab: {fileID: 8062824193503256780, guid: a75611f7c5c96314f839babded39c9b2, type: 3}
+  _mapManager: {fileID: 1391295877}
   _playerPrefab: {fileID: 8503268487075455793, guid: 0cf0790f0b37171458164b8ec111b48b, type: 3}
-  _roomsManager: {fileID: 1401216272}
   _camera: {fileID: 2023753132}
-  _roomsHeight: 5
-  _roomsWidth: 5
-  _spacing: 1.1
---- !u!1 &953678877
+  _mapSize: 0
+--- !u!1 &1391295875
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -179,52 +176,22 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 953678878}
+  - component: {fileID: 1391295876}
+  - component: {fileID: 1391295877}
   m_Layer: 0
-  m_Name: Player
+  m_Name: MapManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &953678878
+--- !u!4 &1391295876
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 953678877}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1401216272
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1401216273}
-  m_Layer: 0
-  m_Name: RoomsManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1401216273
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1401216272}
+  m_GameObject: {fileID: 1391295875}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -233,6 +200,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 433227003}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1391295877
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1391295875}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c277ca3dcb244142806c2c7f465e54b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MapManager
+  _roomPrefab: {fileID: 8062824193503256780, guid: a75611f7c5c96314f839babded39c9b2, type: 3}
 --- !u!1 &2023753127
 GameObject:
   m_ObjectHideFlags: 0
@@ -389,4 +369,3 @@ SceneRoots:
   m_Roots:
   - {fileID: 2023753130}
   - {fileID: 433227003}
-  - {fileID: 953678878}

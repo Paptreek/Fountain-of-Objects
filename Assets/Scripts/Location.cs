@@ -1,18 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Assets.Scripts
+﻿namespace Assets.Scripts
 {
     public class Location
     {
-        public float X { get; }
-        public float Y { get; }
-        public Location(float x, float y)
+        public int X { get; }
+        public int Y { get; }
+        public Location(int x, int y)
         {
             X = x;
             Y = y;
         }
 
+        public override string ToString() => $"(X: {X}, Y: {Y})";
     }
 }
