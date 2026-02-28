@@ -8,7 +8,6 @@ namespace Assets.Scripts
     {
         private GameObject _playerObj;
         private MapData _map;
-
         [SerializeField] private MapManager _mapManager;
         [SerializeField] private GameObject _playerPrefab;
         [SerializeField] private Camera _camera;
@@ -18,7 +17,13 @@ namespace Assets.Scripts
         void Start()
         {
             // Create a map with the desired size
-            _map = _mapManager.GenerateMap(_mapSize);
+            _map = _mapSize switch
+            {
+                MapSize.Small => MapGenerator.CreateSmallMap(),
+                MapSize.Medium => MapGenerator.CreateMediumMap(),
+                MapSize.Large => MapGenerator.CreateLargeMap(),
+            };
+
             _mapManager.InstantiateRooms(_map);
 
             Vector2 playerSpawnPosition = new Vector2(_map.PlayerSpawn.X, _map.PlayerSpawn.Y);
