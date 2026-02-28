@@ -19,6 +19,7 @@ namespace Assets.Scripts
         {
             // Create a map with the desired size
             _map = _mapManager.GenerateMap(_mapSize);
+            _mapManager.InstantiateRooms(_map);
 
             Vector2 playerSpawnPosition = new Vector2(_map.PlayerSpawn.X, _map.PlayerSpawn.Y);
             _playerObj = Instantiate(_playerPrefab, playerSpawnPosition, Quaternion.identity);
