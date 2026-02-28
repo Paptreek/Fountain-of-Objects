@@ -33,6 +33,10 @@ namespace Assets.Scripts.Map
                     presenter.Initialize(roomData);
                 }
             }
+
+            Debug.Log($"Player Spawn Set: {map.PlayerSpawn}");
+            Debug.Log($"Objective Spawn Set: {map.ObjectiveSpawn}");
+            Debug.Log($"Entrance Spawn Set: {map.EntranceSpawn}");
         }
     }
 }
