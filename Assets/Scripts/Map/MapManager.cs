@@ -17,14 +17,14 @@ namespace Assets.Scripts.Map
 
 
         /// <summary>
-        /// Displays all rooms defined in the specified map by instantiating room prefabs at their corresponding
+        /// Instantiates and display all rooms defined in the map from room prefabs at their corresponding
         /// positions in the scene.
         /// </summary>
         /// <remarks>This method iterates through each coordinate in the map, creates a room GameObject at
         /// the appropriate world position, and initializes its presenter with the associated room data. The
         /// instantiated GameObjects are linked to their corresponding room data for further interaction.</remarks>
         /// <param name="map">The map data containing the dimensions and room information to be displayed. Cannot be null.</param>
-        public void DisplayRooms(MapData map)
+        public void InstantiateRooms(MapData map)
         {
             for (int i = 0; i < map.Width; i++)
             {
