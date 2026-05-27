@@ -8,7 +8,7 @@ public class Player : MonoBehaviour
     void Start()
     {
         Debug.Log("Debug Log: Player has joined the game.");
-        Debug.Log($"The player's starting location is ({Location.X}, {Location.Y})");
+        Debug.Log($"The player's starting location is ({Location.GridX}, {Location.GridY})");
     }
 
     // Update is called once per frame
