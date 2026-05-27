@@ -149,7 +149,6 @@ GameObject:
   - component: {fileID: 8447755065354940292}
   - component: {fileID: 1414346172759106683}
   - component: {fileID: 362132388480204539}
-  - component: {fileID: 7669895013610414957}
   - component: {fileID: 8710282768292006508}
   m_Layer: 0
   m_Name: Player
@@ -257,35 +256,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8683af1ecf4cac944be75e1a573de231, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
-  _speed: 200
-  _performedMoveInput: {x: 0, y: 0}
-  _releasedMoveInput: {x: 0, y: 0}
-  _gameManager: {fileID: 0}
---- !u!143 &7669895013610414957
-CharacterController:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8503268487075455793}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Height: 1
-  m_Radius: 0.5
-  m_SlopeLimit: 45
-  m_StepOffset: 0.3
-  m_SkinWidth: 0.08
-  m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0, z: 0}
+  _allowDiagonalMovement: 0
 --- !u!114 &8710282768292006508
 MonoBehaviour:
   m_ObjectHideFlags: 0

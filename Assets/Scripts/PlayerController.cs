@@ -5,8 +5,7 @@ using UnityEngine.InputSystem;
 //This script handles players inputs using the PlayerControls InputActions Asset.
 public class PlayerController : MonoBehaviour
 {
-    //SerializedField property before a private type exposes it to the editor
-    [SerializeField] private float _speed = 1.0f;
+
     [SerializeField] private bool _allowDiagonalMovement = false;
     private Vector2 _performedMoveInput;
     private Vector2 _releasedMoveInput;
@@ -16,12 +15,9 @@ public class PlayerController : MonoBehaviour
     private float _currentX;
     private float _currentY;
 
-    private CharacterController _controller;
-
     // Awake is called before Start. I want the char controller to be assigned before anything can execute code.
     void Awake()
     {
-        _controller = GetComponent<CharacterController>();
         _gameManager = FindFirstObjectByType<GameManager>();
         _currentX = _gameManager.PlayerStartingPosition.x;
         _currentY = _gameManager.PlayerStartingPosition.y;
