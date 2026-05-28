@@ -1,17 +1,27 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Assets.Scripts
+﻿namespace Assets.Scripts
 {
     public class Location
     {
-        public float X { get; }
-        public float Y { get; }
-        public Location(float x, float y)
+        // This represents grid position
+        public float GridX { get; }
+        public float GridY { get; }
+
+        // This represents world postion
+        public float WorldX { get; }
+        public float WorldY { get; }
+        public float WorldZ = 0;
+
+        public Location(float x, float y, float roomSpacing)
         {
-            X = x;
-            Y = y;
+            GridX = x;
+            GridY = y;
+            WorldX = GridX * roomSpacing;
+            WorldY = GridY * roomSpacing;
+        }
+
+        public void UpdatePosition()
+        {
+
         }
 
     }
