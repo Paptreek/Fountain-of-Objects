@@ -1,4 +1,5 @@
 using Assets.Scripts;
+using System.Net;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -16,17 +17,12 @@ public class GameManager : MonoBehaviour
     [SerializeField] private MapSize _mapSize;
     [SerializeField] private GameObject _roomPrefab;
     [SerializeField] private GameObject _player;
-    [SerializeField] private GameObject _roomsManager;
     [SerializeField] private Room[,] _rooms;
+    [SerializeField] private Camera _mapCamera;
 
     // This should likely default to 2. -MATT
     // I would argue that the type should be changed to an int and min clamped at 1. -MATT 
     [SerializeField] private float _roomSpacing = 2;
-
-    public MapSize MapSize => _mapSize;
-    public float RoomSpacing { get; }
-    public Vector2 PlayerStartingPosition { get; }
-    public int GridSize => _squareSize;
 
     void Start()
     {
@@ -43,26 +39,25 @@ public class GameManager : MonoBehaviour
 
         int centerX = _mapWidth / 2;
         int centerY = _mapHeight / 2;
+        //If room spacing goes above 2, this below code will no longer work.
+        _mapCamera.orthographicSize = _squareSize;
+        var centerroom = _rooms[centerX, centerY].transform.position;
+        _mapCamera.transform.position = new Vector3(centerroom.x, centerroom.y, -10);
     }
-    public void BuildRooms()
+    private void BuildRooms()
     {
         for (int i = 0; i < _mapWidth; i++)
         {
             for (int j = 0; j < _mapHeight; j++)
             {
                 Vector2 position = new(i * _roomSpacing, j * _roomSpacing);
-                GameObject roomObj = Instantiate(_roomPrefab, position, Quaternion.identity, _roomsManager.transform);
+                GameObject roomObj = Instantiate(_roomPrefab, position, Quaternion.identity);
                 Room room = roomObj.GetComponent<Room>();
                 room.SetLocation(new Location(i, j, _roomSpacing));
                 _rooms[i, j] = room;
                 Debug.Log($"New room placed at ({room.Location.GridX}, {room.Location.GridY})");
             }
         }
-    }
-
-    public Location ReturnRoomLocation(Vector2 targetRoom)
-    {
-        return _rooms[(int)targetRoom.x, (int)targetRoom.y].Location;
     }
 }
 

@@ -1,18 +1,34 @@
+using System.Collections.Generic;
+using UnityEditor.PackageManager.UI;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UIElements;
 
 public class PlayerController : MonoBehaviour
 {
     private InputAction _moveAction;
+    private InputAction _mapAction;
+    [SerializeField] private GameObject _playerCamera;
+    [SerializeField] private GameObject _mapCamera;
+    private GameObject _currentCamera;
+    private bool _isLookingAtPlayer;
+
+
+    public void Awake()
+    {
+        _currentCamera = _playerCamera;
+        _isLookingAtPlayer = true;
+    }
 
     public void Start()
     {
         _moveAction = InputSystem.actions.FindAction("Move");
+        _mapAction = InputSystem.actions.FindAction("OpenMap");
     }
 
     public void Update()
     {
-        if (_moveAction.WasPressedThisFrame())
+        if (_moveAction != null && _moveAction.WasPressedThisFrame())
         {
             Vector2 moveValue = _moveAction.ReadValue<Vector2>();
 
@@ -32,6 +48,13 @@ public class PlayerController : MonoBehaviour
             {
                 transform.position = new Vector2(transform.position.x, transform.position.y - 2);
             }
+        }
+
+        if (_mapAction.WasPressedThisFrame())
+        {
+            _currentCamera.SetActive(!_isLookingAtPlayer);
+            _currentCamera = _currentCamera == _playerCamera ? _mapCamera : _playerCamera;
+            Debug.Log("Camera Swapped");
         }
     }
 }
