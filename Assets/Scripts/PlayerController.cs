@@ -1,8 +1,5 @@
-using System.Collections.Generic;
-using UnityEditor.PackageManager.UI;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.UIElements;
 
 public class PlayerController : MonoBehaviour
 {
@@ -47,7 +44,7 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        if (_mapAction.WasPressedThisFrame())
+        if (_mapAction != null && _mapAction.WasPressedThisFrame())
         {
             _currentCamera.SetActive(false);
             _currentCamera = _currentCamera == _playerCamera ? _mapCamera : _playerCamera;
