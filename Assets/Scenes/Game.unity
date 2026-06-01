@@ -293,7 +293,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eef51fad570ca7f42987e2d882ba67b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MapManager
-  _mapSize: 2
+  _mapSize: 0
   _roomPrefab: {fileID: 8062824193503256780, guid: a75611f7c5c96314f839babded39c9b2, type: 3}
   _player: {fileID: 0}
   _mapCamera: {fileID: 200595078}
@@ -540,8 +540,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8683af1ecf4cac944be75e1a573de231, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
-  _playerCamera: {fileID: 2001917736}
-  _mapCamera: {fileID: 200595078}
+  _playerCamera: {fileID: 2001917732}
+  _mapCamera: {fileID: 200595074}
 --- !u!114 &2063640186
 MonoBehaviour:
   m_ObjectHideFlags: 0
