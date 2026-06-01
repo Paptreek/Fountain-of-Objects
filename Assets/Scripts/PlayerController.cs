@@ -11,13 +11,10 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private GameObject _playerCamera;
     [SerializeField] private GameObject _mapCamera;
     private GameObject _currentCamera;
-    private bool _isLookingAtPlayer;
-
 
     public void Awake()
     {
         _currentCamera = _playerCamera;
-        _isLookingAtPlayer = true;
     }
 
     public void Start()
