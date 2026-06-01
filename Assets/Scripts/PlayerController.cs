@@ -52,8 +52,9 @@ public class PlayerController : MonoBehaviour
 
         if (_mapAction.WasPressedThisFrame())
         {
-            _currentCamera.SetActive(!_isLookingAtPlayer);
+            _currentCamera.SetActive(false);
             _currentCamera = _currentCamera == _playerCamera ? _mapCamera : _playerCamera;
+            _currentCamera.SetActive(true);
             Debug.Log("Camera Swapped");
         }
     }
