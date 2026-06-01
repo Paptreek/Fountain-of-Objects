@@ -5,13 +5,14 @@ public class PlayerController : MonoBehaviour
 {
     private InputAction _moveAction;
     private InputAction _mapAction;
-    [SerializeField] private GameObject _playerCamera;
-    [SerializeField] private GameObject _mapCamera;
-    private GameObject _currentCamera;
+    [SerializeField] private GameObject _cameraManager;
+    //[SerializeField] private GameObject _playerCamera;
+    //[SerializeField] private GameObject _mapCamera;
+    //private GameObject _currentCamera;
 
     public void Awake()
     {
-        _currentCamera = _playerCamera;
+        //_currentCamera = _playerCamera;
     }
 
     public void Start()
@@ -46,10 +47,12 @@ public class PlayerController : MonoBehaviour
 
         if (_mapAction != null && _mapAction.WasPressedThisFrame())
         {
-            _currentCamera.SetActive(false);
-            _currentCamera = _currentCamera == _playerCamera ? _mapCamera : _playerCamera;
-            _currentCamera.SetActive(true);
-            Debug.Log("Camera Swapped");
+            //_currentCamera.SetActive(false);
+            //_currentCamera = _currentCamera == _playerCamera ? _mapCamera : _playerCamera;
+            //_currentCamera.SetActive(true);
+            //Debug.Log("Camera Swapped");
+
+            _cameraManager.GetComponent<CameraManager>().ToggleCamera();
         }
     }
 }

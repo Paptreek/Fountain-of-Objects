@@ -1,5 +1,4 @@
 using Assets.Scripts;
-using System.Net;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -19,18 +18,13 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject _player;
     [SerializeField] private Room[,] _rooms;
     [SerializeField] private Camera _mapCamera;
-
-    // This should likely default to 2. -MATT
-    // I would argue that the type should be changed to an int and min clamped at 1. -MATT 
     [SerializeField] private float _roomSpacing = 2;
 
     void Start()
     {
         _mapHeight = _squareSize;
         _mapWidth = _squareSize;
-
-        //Clamp room spacing so we cannot have insane boards
-        // Should this even go above 2?
+        
         _roomSpacing = Mathf.Clamp(_roomSpacing, 1, 2);
         _rooms = new Room[_mapHeight, _mapWidth];
 
@@ -39,10 +33,10 @@ public class GameManager : MonoBehaviour
 
         int centerX = _mapWidth / 2;
         int centerY = _mapHeight / 2;
-        //If room spacing goes above 2, this below code will no longer work.
+
         _mapCamera.orthographicSize = _squareSize;
-        var centerroom = _rooms[centerX, centerY].transform.position;
-        _mapCamera.transform.position = new Vector3(centerroom.x, centerroom.y, -10);
+        Vector3 centerRoom = _rooms[centerX, centerY].transform.position;
+        _mapCamera.transform.position = new Vector3(centerRoom.x, centerRoom.y, -10);
     }
     private void BuildRooms()
     {
