@@ -539,7 +539,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8683af1ecf4cac944be75e1a573de231, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
-  _cameraManager: {fileID: 2070024212}
+  _cameraManager: {fileID: 2070024213}
+  _moveDuration: 0.1
 --- !u!114 &2063640186
 MonoBehaviour:
   m_ObjectHideFlags: 0
