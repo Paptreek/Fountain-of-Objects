@@ -25,7 +25,6 @@ public class PlayerController : MonoBehaviour
         _moveAction = InputSystem.actions.FindAction("Move");
         _mapAction = InputSystem.actions.FindAction("OpenMap");
         _originScale = transform.localScale;
-
     }
 
     public void Update()
