@@ -29,8 +29,6 @@ public class PlayerController : MonoBehaviour
 
     public void Update()
     {
-        //Handle Movement
-        #region Movement Handling
         if (!_isMoving)
         {
             CheckForMovementInput();
@@ -39,9 +37,7 @@ public class PlayerController : MonoBehaviour
         {
             CalculateSmoothMovement();
         }
-        #endregion
 
-        //Handle Map Actions
         CheckForMapInput();
     }
 
@@ -52,7 +48,6 @@ public class PlayerController : MonoBehaviour
         {
             Vector2 moveValue = _moveAction.ReadValue<Vector2>();
 
-            //Ensure that we only move forward here when movement is non-zero. 
             if (moveValue == Vector2.zero) return;
 
             if (moveValue.x == 1)
